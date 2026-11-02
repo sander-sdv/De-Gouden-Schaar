@@ -50,7 +50,7 @@ alle links, de sitemap en de Google-gegevens vanzelf met het nieuwe adres; in de
 
 ## Vindbaarheid in Google
 
-- Titel en omschrijving voor Google staan in `_config.yml` (`seo_title` en `description`).
+- Titel en omschrijving voor Google staan in `_config.yml` (`title` en `description`).
 - De winkelgegevens voor Google (adres, telefoon, openingsuren, sociale media) worden automatisch gemaakt uit `_data/winkel.yml` en `_data/openingsuren.yml` (`_includes/seo-data.html`). Wat je via `/bewerken/` aanpast, komt daar dus vanzelf in.
 - De foto bij delen op Facebook/WhatsApp is `assets/images/social.jpg` (1200 × 630).
 - `sitemap.xml` en `robots.txt` worden automatisch gemaakt. De bewerkpagina staat er niet in en heeft een *noindex*-label.

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  {%- if page.title %}{% capture seo_title %}{{ page.title }} · {{ site.title }}{% endcapture %}{% else %}{% assign seo_title = site.seo_title | default: site.title %}{% endif %}
+  {%- if page.title %}{% capture seo_title %}{{ page.title }} · {{ site.title }}{% endcapture %}{% else %}{% assign seo_title = site.title %}{% endif %}
   {%- assign seo_desc = page.description | default: site.description %}
   {%- assign seo_url = page.url | replace: 'index.html', '' | absolute_url %}
   {%- assign seo_img = site.social_image | absolute_url %}
