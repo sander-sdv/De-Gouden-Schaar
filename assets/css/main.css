@@ -15,7 +15,7 @@
   color-scheme: light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h,112px) + 12px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -30,7 +30,8 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 .notice .wrap{display:flex;gap:10px;align-items:center}
 .notice i{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
 
-/* header */
+/* header: blijft bovenaan staan tijdens het scrollen */
+.site-header{position:sticky;top:0;z-index:20;background:var(--bg)}
 .nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px;gap:16px;flex-wrap:wrap}
 .brand{font-family:var(--serif);font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px;color:var(--gold-title)}
 .brand .icon{color:var(--gold)}
@@ -149,6 +150,9 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
   .story .ph{aspect-ratio:4/3}
   .nav nav{gap:18px}
+  .nav{padding-block:14px;gap:8px}
+  .tape{height:22px;font-size:9px}
+  .tape span{display:none}
 }
 @media (max-width:420px){.contact{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

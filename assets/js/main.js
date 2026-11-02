@@ -11,6 +11,12 @@
     });
   }
 
+  // Hoogte van de vaste menubalk, zodat menulinks niet onder de balk eindigen.
+  var header = document.querySelector('.site-header');
+  function setHeaderH() { if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px'); }
+  setHeaderH();
+  window.addEventListener('resize', setHeaderH);
+
   // 2. Markeer de openingsuren van vandaag.
   var today = new Date().getDay(); // 0 = zondag
   document.querySelectorAll('.hours tr[data-day="' + today + '"]').forEach(function (tr) {
