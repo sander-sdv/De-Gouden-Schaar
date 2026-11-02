@@ -4,14 +4,12 @@ kicker: Mercerie · Ledeberg · sinds 1910
 titel: Op maat geholpen, al
 titel_goud: vijf generaties.
 intro: >-
-  Fournituren en modeaccessoires in hartje Ledeberg. Garen, ritsen, knopen,
-  linten en voering van topkwaliteit, met eerlijk advies van iemand die het vak kent.
-  Bij ons word je altijd vriendelijk verder geholpen.
+  Fournituren en modeaccessoires in hartje Ledeberg. Garen, ritsen, knopen, linten en voering van topkwaliteit, met eerlijk advies van iemand die het vak kent. Bij ons word je altijd vriendelijk verder geholpen.
 
 # Mededeling bovenaan de pagina. Zet "tonen" op false om ze te verbergen.
 mededeling:
   tonen: true
-  tekst: "Vakantie: de winkel is gesloten van 2 tot en met 23 augustus."
+  tekst: "Vakantie: de winkel is gesloten van 2 tot en met 23 augustus.."
 
 adres:
   straat: Ledebergstraat 4
@@ -31,4 +29,3 @@ sociaal:
 kaart:
   lat: 51.036695
   lon: 3.7411292
-
