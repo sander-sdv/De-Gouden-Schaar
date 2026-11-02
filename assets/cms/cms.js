@@ -414,8 +414,8 @@ function askToken(reason) {
           <ol>
             <li>Meld je aan op <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com → nieuwe sleutel</a>.</li>
             <li>Geef een naam (bv. "Website bewerken") en kies een vervaldatum.</li>
-            <li>Bij <em>Repository access</em>: kies <em>Only select repositories</em> → <code>${REPO}</code>.</li>
-            <li>Bij <em>Permissions → Contents</em>: kies <em>Read and write</em>.</li>
+            <li>Bij <em>Repository access</em>: kies <em>Only select repositories</em> → <code>${REPO.split('/')[1]}</code>.</li>
+            <li>Klik <em>Add permissions</em> en vink <em>Contents</em> aan. Zet daarna het keuzemenu naast <em>Contents</em> van <em>Read-only</em> op <em>Read and write</em>.</li>
             <li>Klik <em>Generate token</em> en plak de sleutel hierboven.</li>
           </ol>
         </details>

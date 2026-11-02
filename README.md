@@ -15,7 +15,7 @@ Open **https://sander-sdv.github.io/De-Gouden-Schaar/bewerken/** (zet er een bla
 
 De eerste keer vraagt de pagina een **sleutel**. Die maak je één keer per toestel aan:
 [github.com → Settings → Developer settings → Fine-grained tokens → Generate new token](https://github.com/settings/personal-access-tokens/new).
-Kies *Only select repositories* → deze repository, en bij *Permissions → Contents* → *Read and write*.
+Kies bij *Repository access* *Only select repositories* → deze repository. Klik dan *Add permissions*, vink *Contents* aan en zet het keuzemenu ernaast van *Read-only* op *Read and write*.
 De sleutel blijft alleen in de browser van dat toestel bewaard, nooit in deze repository. Via **⋯ → Afmelden** wis je hem weer.
 
 Hoe het werkt: de bewerkpagina (`bewerken.html`, code in `assets/cms/`) is dezelfde pagina als de homepagina met een editor erbij.
