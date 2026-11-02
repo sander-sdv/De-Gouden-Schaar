@@ -17,6 +17,28 @@
   setHeaderH();
   window.addEventListener('resize', setHeaderH);
 
+  // Menuknop op kleine schermen: opent en sluit het menu.
+  var btn = document.querySelector('.menu-btn');
+  if (header && btn) {
+    var label = btn.querySelector('.menu-label');
+    var setOpen = function (open) {
+      header.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (label) label.textContent = open ? 'Sluiten' : 'Menu';
+    };
+    btn.addEventListener('click', function () { setOpen(!header.classList.contains('open')); });
+    header.querySelectorAll('nav a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('click', function (e) {
+      if (header.classList.contains('open') && !header.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
+  }
+
   // 2. Markeer de openingsuren van vandaag.
   var today = new Date().getDay(); // 0 = zondag
   document.querySelectorAll('.hours tr[data-day="' + today + '"]').forEach(function (tr) {
@@ -28,5 +50,15 @@
   var svg = document.getElementById('stitch-svg');
   if (svg && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     try { svg.setCurrentTime(10); svg.pauseAnimations(); } catch (e) {}
+  } else if (svg && 'IntersectionObserver' in window) {
+    // 4. Op een gsm staat het stiksel onder de vouw: start pas als het in beeld komt.
+    try { svg.pauseAnimations(); svg.setCurrentTime(0); } catch (e) {}
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        try { svg.unpauseAnimations(); } catch (e) {}
+        io.disconnect();
+      }
+    }, { threshold: 0.6 });
+    io.observe(svg);
   }
 })();

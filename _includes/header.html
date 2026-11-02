@@ -2,7 +2,8 @@
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="{{ '/' | relative_url }}">{% include scissors.html size=24 %}<span data-cms="winkel:naam">{{ w.naam }}</span></a>
-    <nav aria-label="Hoofdmenu">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hoofdmenu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-label">Menu</span></button>
+    <nav id="hoofdmenu" aria-label="Hoofdmenu">
       <a href="{{ "/" | relative_url }}#aanbod">Aanbod</a>
       <a href="{{ "/" | relative_url }}#diensten">Diensten</a>
       <a href="{{ "/" | relative_url }}#over-ons">Over ons</a>
