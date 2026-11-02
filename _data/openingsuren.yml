@@ -1,0 +1,15 @@
+# Laat "uren" leeg voor een gesloten dag.
+- dag: Maandag
+  uren:
+- dag: Dinsdag
+  uren:
+- dag: Woensdag
+  uren: "09:00–12:00 · 13:30–18:00"
+- dag: Donderdag
+  uren: "09:00–12:00 · 13:30–18:00"
+- dag: Vrijdag
+  uren: "09:00–12:00 · 13:30–18:00"
+- dag: Zaterdag
+  uren: "09:00–12:00 · 13:30–17:00"
+- dag: Zondag
+  uren: "10:00–12:00"

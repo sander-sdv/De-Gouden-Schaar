@@ -1,0 +1,16 @@
+{% assign w = site.data.winkel %}
+{% if w.mededeling.tonen %}
+<div class="notice"><div class="wrap"><i aria-hidden="true"></i>{{ w.mededeling.tekst }}</div></div>
+{% endif %}
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="{{ '/' | relative_url }}">{% include scissors.html size=24 %}{{ w.naam }}</a>
+    <nav aria-label="Hoofdmenu">
+      <a href="{{ "/" | relative_url }}#aanbod">Aanbod</a>
+      <a href="{{ "/" | relative_url }}#diensten">Diensten</a>
+      <a href="{{ "/" | relative_url }}#over-ons">Over ons</a>
+      <a href="{{ "/" | relative_url }}#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="tape" aria-hidden="true">{% for i in (0..29) %}<span style="left:{{ i | times: 100 }}px">{{ i }}</span>{% endfor %}</div>
+</header>

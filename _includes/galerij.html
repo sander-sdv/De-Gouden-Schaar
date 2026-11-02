@@ -1,0 +1,7 @@
+<section class="section gallery-section" aria-label="Foto's uit de winkel">
+  <div class="wrap gallery">
+    {% for f in site.data.fotos %}
+    <figure class="ph"><img src="{{ f.bestand | relative_url }}" alt="{{ f.bijschrift }}" loading="lazy"><figcaption>{{ f.bijschrift }}</figcaption></figure>
+    {% endfor %}
+  </div>
+</section>
