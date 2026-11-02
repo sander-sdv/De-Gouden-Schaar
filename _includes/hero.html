@@ -1,0 +1,31 @@
+{% assign w = site.data.winkel %}
+{% capture q %}{{ w.naam }}, {{ w.adres.straat }}, {{ w.adres.postcode }} {{ w.adres.stad }}{% endcapture %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">{{ w.kicker }}</div>
+      <h1>{{ w.titel }} <em>{{ w.titel_goud }}</em></h1>
+      <p>{{ w.intro }}</p>
+      <div class="btns">
+        <a class="btn" href="#aanbod">Ontdek het aanbod</a>
+        <a class="btn ghost js-maps" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener">{{ w.adres.straat }} ↗</a>
+      </div>
+    </div>
+    <div class="stitch" aria-hidden="true">
+      <svg viewBox="20 150 370 230" id="stitch-svg">
+        <text x="200" y="230" text-anchor="middle" class="stitch-small">sinds</text>
+        <text x="200" y="310" text-anchor="middle" class="stitch-big">1910</text>
+        <path id="stitch-path" d="M70 345 C 140 365, 260 325, 330 345" fill="none" class="stitch-guide"/>
+        <path d="M70 345 C 140 365, 260 325, 330 345" fill="none" class="stitch-line">
+          <animate attributeName="stroke-dashoffset" begin="0.4s" dur="4.2s" fill="freeze" calcMode="discrete"
+            values="272;255;238;221;204;187;170;153;136;119;102;85;68;51;34;17;0"
+            keyTimes="0;0.0625;0.125;0.1875;0.25;0.3125;0.375;0.4375;0.5;0.5625;0.625;0.6875;0.75;0.8125;0.875;0.9375;1"/>
+        </path>
+        <g class="needle">
+          <path d="M-8,-1.4 L44,0 L-8,1.4 Z"/>
+          <animateMotion begin="0.4s" dur="4.2s" fill="freeze" rotate="auto"><mpath href="#stitch-path"/></animateMotion>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+{% assign w = site.data.winkel %}
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© {{ site.time | date: "%Y" }} {{ w.naam }} · {{ w.adres.straat }}, {{ w.adres.postcode }} {{ w.adres.gemeente }}</span>
+    <span class="social">{% for s in w.sociaal %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.naam }}</a>{% endfor %}</span>
+  </div>
+</footer>

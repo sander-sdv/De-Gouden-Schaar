@@ -1,0 +1,10 @@
+<section class="section" id="aanbod">
+  <div class="wrap split">
+    <h2><small>Aanbod</small>Fournituren &amp; accessoires</h2>
+    <ul class="idx">
+      {% for p in site.data.aanbod %}
+      <li><b aria-hidden="true"></b><h3>{{ p.titel }}</h3><p>{{ p.tekst }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

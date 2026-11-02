@@ -1,0 +1,14 @@
+{% assign o = site.data.over %}
+<section class="section" id="over-ons">
+  <div class="wrap story">
+    <figure class="ph"><img src="{{ o.foto | relative_url }}" alt="{{ o.foto_bijschrift }}" loading="lazy" style="object-position:35% center"><figcaption>{{ o.foto_bijschrift }}</figcaption></figure>
+    <div>
+      <div class="kicker">Over ons</div>
+      <blockquote>{{ o.citaat }}</blockquote>
+      <p>{{ o.tekst }}</p>
+      <div class="years">
+        {% for j in o.jaartallen %}<div><b>{{ j.jaar }}</b>{{ j.tekst }}</div>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

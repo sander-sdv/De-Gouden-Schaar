@@ -1,0 +1,15 @@
+# Site-instellingen voor De Gouden Schaar (Jekyll / GitHub Pages)
+title: De Gouden Schaar
+description: Fournituren en modeaccessoires in Ledeberg, sinds 1910. Garen, ritsen, knopen, linten, voering en naaiwerk op maat.
+lang: nl-BE
+# Vul hier het volledige webadres in zodra het domein gekoppeld is, bv. https://www.degoudenschaar.info
+url: ""
+baseurl: ""
+
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitattributes
