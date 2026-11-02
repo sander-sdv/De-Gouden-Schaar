@@ -42,6 +42,18 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
   background-size:100% 8px,100% 13px,100% 18px;background-repeat:repeat-x;position:relative;overflow:hidden;font-size:10px;font-variant-numeric:tabular-nums}
 .tape span{position:absolute;bottom:3px;transform:translateX(3px)}
 
+/* menuknop (alleen op kleine schermen) */
+.menu-btn{display:none;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 12px;margin-right:-4px;background:none;border:0;color:var(--ink);font:600 15px var(--sans);cursor:pointer}
+.menu-btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.menu-icon{position:relative;width:22px;height:14px;display:block}
+.menu-icon i{position:absolute;left:0;right:0;height:2px;background:var(--gold);border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-icon i:nth-child(1){top:0}
+.menu-icon i:nth-child(2){top:6px}
+.menu-icon i:nth-child(3){top:12px}
+.open .menu-icon i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.open .menu-icon i:nth-child(2){opacity:0}
+.open .menu-icon i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
 /* knoppen */
 .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;background:var(--gold);color:var(--ink);padding:13px 22px;border-radius:999px;transition:background .2s}
@@ -154,11 +166,23 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
   /* compactere menubalk: neemt minder van het scherm in tijdens het scrollen */
   .nav{padding-block:10px 6px;gap:0}
   .brand{font-size:20px}
-  .nav nav{width:100%;gap:8px;justify-content:space-between}
   .tape{height:16px;font-size:9px}
   .tape span{display:none}
-  /* grotere tikzones zonder dat de opmaak verschuift */
-  .nav nav a{padding-block:10px;margin-block:-4px -10px;opacity:.85}
+  /* zonder JavaScript: de vier links op een rij onder de naam */
+  html:not(.js) .nav nav{width:100%;gap:8px;justify-content:space-between}
+  html:not(.js) .nav nav a{padding-block:10px;margin-block:-4px -10px}
+  /* met JavaScript: menuknop rechts, het menu klapt open onder het meetlint */
+  .js .nav{padding-block:8px;flex-wrap:nowrap}
+  .js .menu-btn{display:inline-flex}
+  .js .nav nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);
+    padding:4px max(20px,env(safe-area-inset-right,0px)) 16px max(20px,env(safe-area-inset-left,0px));
+    border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(17,17,16,.08);max-height:calc(100dvh - var(--header-h,80px));overflow:auto}
+  .js .site-header.open nav{display:flex}
+  .js .nav nav a{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);
+    font-family:var(--serif);font-size:26px;line-height:1.1;opacity:1}
+  .js .nav nav a:last-child{border-bottom:0}
+  .js .nav nav a::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
+  .js .nav nav a:hover{text-decoration:none;color:var(--gold-text)}
   .contact a,.social a{display:inline-block;padding-block:10px;margin-block:-10px}
   .hero-grid{gap:28px}
   .stitch{max-width:300px;width:100%;margin-inline:auto}
