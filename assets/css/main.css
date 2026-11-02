@@ -151,10 +151,21 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
   .idx li p{grid-column:2}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
   .story .ph{aspect-ratio:4/3}
-  .nav nav{gap:18px}
-  .nav{padding-block:14px;gap:8px}
-  .tape{height:22px;font-size:9px}
+  /* compactere menubalk: neemt minder van het scherm in tijdens het scrollen */
+  .nav{padding-block:10px 6px;gap:0}
+  .brand{font-size:20px}
+  .nav nav{width:100%;gap:8px;justify-content:space-between}
+  .tape{height:16px;font-size:9px}
   .tape span{display:none}
+  /* grotere tikzones zonder dat de opmaak verschuift */
+  .nav nav a{padding-block:10px;margin-block:-4px -10px;opacity:.85}
+  .contact a,.social a{display:inline-block;padding-block:10px;margin-block:-10px}
+  .hero-grid{gap:28px}
+  .stitch{max-width:300px;width:100%;margin-inline:auto}
+  .section{padding-block:48px}
+  .split,.story,.visit{gap:24px}
+  .map{min-height:320px}
 }
 @media (max-width:420px){.contact{grid-template-columns:1fr}}
+@media (max-width:370px){.hours{font-size:14px}.hours td+td{padding-left:8px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

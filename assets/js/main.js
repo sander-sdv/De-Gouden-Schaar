@@ -28,5 +28,15 @@
   var svg = document.getElementById('stitch-svg');
   if (svg && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     try { svg.setCurrentTime(10); svg.pauseAnimations(); } catch (e) {}
+  } else if (svg && 'IntersectionObserver' in window) {
+    // 4. Op een gsm staat het stiksel onder de vouw: start pas als het in beeld komt.
+    try { svg.pauseAnimations(); svg.setCurrentTime(0); } catch (e) {}
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        try { svg.unpauseAnimations(); } catch (e) {}
+        io.disconnect();
+      }
+    }, { threshold: 0.6 });
+    io.observe(svg);
   }
 })();

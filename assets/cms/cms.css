@@ -62,4 +62,20 @@
 .cms-row{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
 .cms-card .cms-ghost{color:var(--ink)}
 @media (max-width:860px){.split>.cms-add{grid-column:auto}}
-@media (max-width:600px){.cms-hint{display:none}.cms-bar-in{gap:10px;padding:10px 12px}.cms-btn{padding:9px 14px}.cms-on{padding-bottom:120px}}
+@media (hover:none){.cms-del{width:34px;height:34px;top:-12px;right:-6px;font-size:19px}}
+@media (max-width:600px){
+  .cms-hint{display:none}
+  .cms-bar-in{gap:8px 10px;padding:10px 12px}
+  .cms-btn{padding:11px 16px}
+  .cms-more summary{padding:10px 12px}
+  .cms-more>div{bottom:48px}
+  /* twee rijen: vinkje + menu bovenaan, knoppen eronder */
+  .cms-title{display:none}
+  .cms-check{order:1;flex:1 1 auto;white-space:normal;min-height:40px}
+  .cms-more{order:2}
+  #cms-undo{order:3}
+  #cms-publish{order:4}
+  .cms-count{order:5}
+  .cms-on{padding-bottom:130px}
+  .cms-toast{bottom:124px}
+}
