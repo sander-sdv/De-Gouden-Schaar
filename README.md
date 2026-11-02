@@ -24,8 +24,8 @@ Foto's staan in `assets/images/`. Deze structuur is bedoeld om later een Git-geb
 2. Kies bij **Source**: *Deploy from a branch*, branch `main`, map `/ (root)`.
 3. Na een minuut staat de site op `https://<gebruiker>.github.io/<repo>/`.
 
-Wordt de site eerst op een `github.io`-adres met een repo-naam gepubliceerd, zet dan in `_config.yml` `baseurl` op `"/De-Gouden-Schaar"`.
-Voor het eigen domein (www.degoudenschaar.info): voeg het domein toe onder **Settings → Pages → Custom domain** en pas de DNS bij de domeinregistrar aan.
+De site staat nu op `https://sander-sdv.github.io/De-Gouden-Schaar/`. Daarom staat in `_config.yml` `baseurl: "/De-Gouden-Schaar"`.
+Voor het eigen domein (www.degoudenschaar.info): voeg het domein toe onder **Settings → Pages → Custom domain**, pas de DNS bij de domeinregistrar aan, en zet dan in `_config.yml` `url` op `"https://www.degoudenschaar.info"` en `baseurl` op `""`.
 
 ## Lokaal bekijken
 

@@ -3,8 +3,8 @@ title: De Gouden Schaar
 description: Fournituren en modeaccessoires in Ledeberg, sinds 1910. Garen, ritsen, knopen, linten, voering en naaiwerk op maat.
 lang: nl-BE
 # Vul hier het volledige webadres in zodra het domein gekoppeld is, bv. https://www.degoudenschaar.info
-url: ""
-baseurl: ""
+url: "https://sander-sdv.github.io"
+baseurl: "/De-Gouden-Schaar"
 
 markdown: kramdown
 exclude:
