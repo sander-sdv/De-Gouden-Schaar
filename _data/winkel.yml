@@ -8,8 +8,8 @@ intro: >-
 
 # Mededeling bovenaan de pagina. Zet "tonen" op false om ze te verbergen.
 mededeling:
-  tonen: true
-  tekst: "Vakantie: de winkel is gesloten van 2 tot en met 23 augustus.."
+  tonen: false
+  tekst: "Wij zijn er eventjes tussenuit van 2 tot 23 augustus."
 
 adres:
   straat: Ledebergstraat 4
