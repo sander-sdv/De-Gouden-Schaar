@@ -10,7 +10,9 @@
   {%- assign seo_img = site.social_image | absolute_url %}
   <title>{{ seo_title }}</title>
   <meta name="description" content="{{ seo_desc }}">
-  {% if page.cms or page.noindex %}<meta name="robots" content="noindex, nofollow">
+  {%- comment -%} Zolang de site nog op het tijdelijke github.io-adres staat, blijft ze uit Google. Met het eigen domein verdwijnt dit vanzelf. {%- endcomment -%}
+  {%- assign tijdelijk = false %}{% if site.url contains 'github.io' %}{% assign tijdelijk = true %}{% endif %}
+  {% if page.cms or page.noindex or tijdelijk %}<meta name="robots" content="noindex, nofollow">
   {% else %}<link rel="canonical" href="{{ seo_url }}">
   {% endif %}<meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.title }}">
@@ -30,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  {% unless page.cms or page.noindex %}{% include seo-data.html %}{% endunless %}
+  {% unless page.cms or page.noindex or tijdelijk %}{% include seo-data.html %}{% endunless %}
 </head>
 <body>
   <a class="skip" href="#inhoud">Naar de inhoud</a>

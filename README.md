@@ -54,6 +54,7 @@ alle links, de sitemap en de Google-gegevens vanzelf met het nieuwe adres; in de
 - De winkelgegevens voor Google (adres, telefoon, openingsuren, sociale media) worden automatisch gemaakt uit `_data/winkel.yml` en `_data/openingsuren.yml` (`_includes/seo-data.html`). Wat je via `/bewerken/` aanpast, komt daar dus vanzelf in.
 - De foto bij delen op Facebook/WhatsApp is `assets/images/social.jpg` (1200 × 630).
 - `sitemap.xml` en `robots.txt` worden automatisch gemaakt. De bewerkpagina staat er niet in en heeft een *noindex*-label.
+- Zolang de site op het tijdelijke github.io-adres staat, krijgt elke pagina een *noindex*-label, zodat Google de oude site niet verwart met deze kopie. Met het eigen domein verdwijnt dat label vanzelf.
 
 ## Lokaal bekijken
 
