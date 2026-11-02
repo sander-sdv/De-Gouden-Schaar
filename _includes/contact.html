@@ -1,10 +1,9 @@
 {% assign w = site.data.winkel %}
 {% capture q %}{{ w.naam }}, {{ w.adres.straat }}, {{ w.adres.postcode }} {{ w.adres.stad }}{% endcapture %}
-{% capture adres %}{{ w.adres.straat }}, {{ w.adres.postcode }} {{ w.adres.stad }}, België{% endcapture %}
 <section class="section" id="contact">
   <div class="wrap visit">
     <div class="map">
-      <iframe title="Kaart: {{ w.naam }}, {{ w.adres.straat }}, {{ w.adres.postcode }} {{ w.adres.gemeente }}" src="https://maps.google.com/maps?q={{ adres | url_encode }}&amp;z=16&amp;hl=nl&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div id="kaart" class="kaart" data-lat="{{ w.kaart.lat }}" data-lon="{{ w.kaart.lon }}" data-zoom="{{ w.kaart.zoom }}" data-naam="{{ w.naam }}" role="img" aria-label="Kaart met de ligging van {{ w.naam }}, {{ w.adres.straat }}"></div>
       <a class="card js-maps" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener"><span><strong>{{ w.adres.straat }}</strong><small>{{ w.adres.postcode }} {{ w.adres.gemeente }} ({{ w.adres.stad }})</small></span><span class="go">Open in Kaarten ↗</span></a>
     </div>
     <div class="info">
