@@ -1,13 +1,13 @@
 {% assign o = site.data.over %}
 <section class="section" id="over-ons">
   <div class="wrap story">
-    <figure class="ph"><img src="{{ o.foto | relative_url }}" alt="{{ o.foto_bijschrift }}" loading="lazy" style="object-position:35% center"><figcaption>{{ o.foto_bijschrift }}</figcaption></figure>
+    <figure class="ph"><img src="{{ o.foto | relative_url }}" alt="{{ o.foto_bijschrift }}" loading="lazy" style="object-position:35% center" data-cms="over:foto" data-cms-img data-cms-value="{{ o.foto }}"><figcaption data-cms="over:foto_bijschrift">{{ o.foto_bijschrift }}</figcaption></figure>
     <div>
       <div class="kicker">Over ons</div>
-      <blockquote>{{ o.citaat }}</blockquote>
-      <p>{{ o.tekst }}</p>
-      <div class="years">
-        {% for j in o.jaartallen %}<div><b>{{ j.jaar }}</b>{{ j.tekst }}</div>{% endfor %}
+      <blockquote data-cms="over:citaat">{{ o.citaat }}</blockquote>
+      <p data-cms="over:tekst">{{ o.tekst }}</p>
+      <div class="years" data-cms-list="over:jaartallen" data-cms-add="Nieuw jaartal toevoegen">
+        {% for j in o.jaartallen %}<div data-cms-item><b data-cms-field="jaar">{{ j.jaar }}</b><span data-cms-field="tekst">{{ j.tekst }}</span></div>{% endfor %}
       </div>
     </div>
   </div>

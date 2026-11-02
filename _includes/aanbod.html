@@ -1,9 +1,9 @@
 <section class="section" id="aanbod">
   <div class="wrap split">
     <h2><small>Aanbod</small>Fournituren &amp; accessoires</h2>
-    <ul class="idx">
+    <ul class="idx" data-cms-list="aanbod" data-cms-add="Nieuwe categorie toevoegen">
       {% for p in site.data.aanbod %}
-      <li><b aria-hidden="true"></b><h3>{{ p.titel }}</h3><p>{{ p.tekst }}</p></li>
+      <li data-cms-item><b aria-hidden="true"></b><h3 data-cms-field="titel">{{ p.titel }}</h3><p data-cms-field="tekst">{{ p.tekst }}</p></li>
       {% endfor %}
     </ul>
   </div>
