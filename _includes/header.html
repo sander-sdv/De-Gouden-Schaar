@@ -1,7 +1,7 @@
 {% assign w = site.data.winkel %}
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="{{ '/' | relative_url }}">{% include scissors.html size=24 %}{{ w.naam }}</a>
+    <a class="brand" href="{{ '/' | relative_url }}">{% include scissors.html size=24 %}<span data-cms="winkel:naam">{{ w.naam }}</span></a>
     <nav aria-label="Hoofdmenu">
       <a href="{{ "/" | relative_url }}#aanbod">Aanbod</a>
       <a href="{{ "/" | relative_url }}#diensten">Diensten</a>
@@ -11,6 +11,6 @@
   </div>
   <div class="tape" aria-hidden="true">{% for i in (0..29) %}<span style="left:{{ i | times: 100 }}px">{{ i }}</span>{% endfor %}</div>
 </header>
-{% if w.mededeling.tonen %}
-<div class="notice" role="status"><div class="wrap">{{ w.mededeling.tekst }}</div></div>
+{% if w.mededeling.tonen or page.cms %}
+<div class="notice" role="status" data-cms-toggle="winkel:mededeling.tonen"{% unless w.mededeling.tonen %} hidden{% endunless %}><div class="wrap" data-cms="winkel:mededeling.tekst">{{ w.mededeling.tekst }}</div></div>
 {% endif %}

@@ -6,6 +6,11 @@ lang: nl-BE
 url: "https://sander-sdv.github.io"
 baseurl: "/De-Gouden-Schaar"
 
+# Bewerkmodus (/bewerken/): hier slaat de editor de wijzigingen op.
+cms:
+  repo: sander-sdv/De-Gouden-Schaar
+  branch: main
+
 markdown: kramdown
 exclude:
   - README.md

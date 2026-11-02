@@ -1,10 +1,10 @@
 {% assign d = site.data.diensten %}
 <section class="section band" id="diensten">
   <div class="wrap">
-    <div class="bandhead"><h2>{{ d.titel }}</h2><span>{{ d.ondertitel }}</span></div>
-    <div class="svc">
+    <div class="bandhead"><h2 data-cms="diensten:titel">{{ d.titel }}</h2><span data-cms="diensten:ondertitel">{{ d.ondertitel }}</span></div>
+    <div class="svc" data-cms-list="diensten:items" data-cms-add="Nieuwe dienst toevoegen">
       {% for s in d.items %}
-      <div><h3>{{ s.titel }}</h3><p>{{ s.tekst }}</p></div>
+      <div data-cms-item><h3 data-cms-field="titel">{{ s.titel }}</h3><p data-cms-field="tekst">{{ s.tekst }}</p></div>
       {% endfor %}
     </div>
   </div>

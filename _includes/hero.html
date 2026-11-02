@@ -3,12 +3,12 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker">{{ w.kicker }}</div>
-      <h1>{{ w.titel }} <em>{{ w.titel_goud }}</em></h1>
-      <p>{{ w.intro }}</p>
+      <div class="kicker" data-cms="winkel:kicker">{{ w.kicker }}</div>
+      <h1><span data-cms="winkel:titel">{{ w.titel }}</span> <em data-cms="winkel:titel_goud">{{ w.titel_goud }}</em></h1>
+      <p data-cms="winkel:intro">{{ w.intro }}</p>
       <div class="btns">
         <a class="btn" href="#aanbod">Ontdek het aanbod</a>
-        <a class="btn ghost js-maps" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener">{{ w.adres.straat }} ↗</a>
+        <a class="btn ghost js-maps" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener"><span data-cms="winkel:adres.straat">{{ w.adres.straat }}</span> ↗</a>
       </div>
     </div>
     <div class="stitch" aria-hidden="true">
