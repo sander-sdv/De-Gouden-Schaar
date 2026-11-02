@@ -1,0 +1,43 @@
+{%- comment -%}
+  Gestructureerde gegevens voor Google (winkel, adres, openingsuren).
+  Alles komt uit _data/winkel.yml en _data/openingsuren.yml, dus wijzigingen via /bewerken/ komen hier vanzelf in.
+{%- endcomment -%}
+{%- assign w = site.data.winkel -%}
+{%- assign dagen = "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," -%}
+{%- capture uren -%}
+{%- for d in site.data.openingsuren -%}{%- if d.uren -%}
+{%- assign dag = dagen[forloop.index0] -%}
+{%- assign blokken = d.uren | split: "·" -%}
+{%- for b in blokken -%}{%- assign t = b | strip | replace: "-", "–" | split: "–" -%}{%- if t.size == 2 -%}
+,{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/{{ dag }}","opens":"{{ t[0] | strip }}","closes":"{{ t[1] | strip }}"}
+{%- endif -%}{%- endfor -%}
+{%- endif -%}{%- endfor -%}
+{%- endcapture -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "@id": {{ '/#winkel' | absolute_url | jsonify }},
+  "name": {{ w.naam | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "image": [{{ site.social_image | absolute_url | jsonify }}, {{ site.data.over.foto | absolute_url | jsonify }}],
+  "logo": {{ '/assets/images/apple-touch-icon.png' | absolute_url | jsonify }},
+  "telephone": {{ w.telefoon | remove_first: "0" | prepend: "+32 " | jsonify }},
+  "email": {{ w.email | jsonify }},
+  "foundingDate": "1910",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ w.adres.straat | jsonify }},
+    "postalCode": {{ w.adres.postcode | jsonify }},
+    "addressLocality": {{ w.adres.gemeente | jsonify }},
+    "addressRegion": "Oost-Vlaanderen",
+    "addressCountry": "BE"
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": {{ w.kaart.lat }}, "longitude": {{ w.kaart.lon }}},
+  "hasMap": {{ w.kaart.lat | append: "," | append: w.kaart.lon | prepend: "https://www.google.com/maps?q=" | jsonify }},
+  "areaServed": "Gent",
+  "openingHoursSpecification": [{{ uren | strip | remove_first: "," }}],
+  "sameAs": [{% for s in w.sociaal %}{{ s.url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+}
+</script>

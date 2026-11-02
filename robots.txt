@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: /robots.txt
+---
+# Alle zoekmachines welkom. De bewerkpagina (/bewerken/) heeft zelf een "noindex"-label,
+# zodat Google ze kan lezen én weet dat ze niet in de zoekresultaten hoort.
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

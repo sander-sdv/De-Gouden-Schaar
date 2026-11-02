@@ -1,10 +1,15 @@
 # Site-instellingen voor De Gouden Schaar (Jekyll / GitHub Pages)
 title: De Gouden Schaar
-description: Fournituren en modeaccessoires in Ledeberg, sinds 1910. Garen, ritsen, knopen, linten, voering en naaiwerk op maat.
+# Korte omschrijving in Google (max. ±155 tekens)
+description: Fournituren en modeaccessoires in Ledeberg (Gent), sinds 1910. Garen, ritsen, knopen, linten, voering en naaiwerk op maat, met eerlijk advies.
 lang: nl-BE
-# Vul hier het volledige webadres in zodra het domein gekoppeld is, bv. https://www.degoudenschaar.info
-url: "https://sander-sdv.github.io"
-baseurl: "/De-Gouden-Schaar"
+# Foto die verschijnt als de site gedeeld wordt (1200 × 630 pixels)
+social_image: /assets/images/social.jpg
+
+# Webadres: bewust NIET ingevuld. GitHub Pages vult "url" en "baseurl" zelf in:
+#   nu:                      https://sander-sdv.github.io  +  /De-Gouden-Schaar
+#   met het eigen domein:    https://www.degoudenschaar.info  +  (leeg)
+# Bij het koppelen van het domein hoef je hier dus niets te veranderen.
 
 # Bewerkmodus (/bewerken/): hier slaat de editor de wijzigingen op.
 cms:

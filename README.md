@@ -43,8 +43,17 @@ Foto's staan in `assets/images/`.
 2. Kies bij **Source**: *Deploy from a branch*, branch `main`, map `/ (root)`.
 3. Na een minuut staat de site op `https://<gebruiker>.github.io/<repo>/`.
 
-De site staat nu op `https://sander-sdv.github.io/De-Gouden-Schaar/`. Daarom staat in `_config.yml` `baseurl: "/De-Gouden-Schaar"`.
-Voor het eigen domein (www.degoudenschaar.info): voeg het domein toe onder **Settings → Pages → Custom domain**, pas de DNS bij de domeinregistrar aan, en zet dan in `_config.yml` `url` op `"https://www.degoudenschaar.info"` en `baseurl` op `""`.
+De site staat nu op `https://sander-sdv.github.io/De-Gouden-Schaar/`.
+`url` en `baseurl` staan bewust niet in `_config.yml`: GitHub Pages vult ze zelf in. Voor het eigen domein (www.degoudenschaar.info)
+voeg je het domein toe onder **Settings → Pages → Custom domain** en pas je de DNS bij de domeinregistrar aan. Daarna kloppen
+alle links, de sitemap en de Google-gegevens vanzelf met het nieuwe adres; in de code hoeft niets te veranderen.
+
+## Vindbaarheid in Google
+
+- Titel en omschrijving voor Google staan in `_config.yml` (`title` en `description`).
+- De winkelgegevens voor Google (adres, telefoon, openingsuren, sociale media) worden automatisch gemaakt uit `_data/winkel.yml` en `_data/openingsuren.yml` (`_includes/seo-data.html`). Wat je via `/bewerken/` aanpast, komt daar dus vanzelf in.
+- De foto bij delen op Facebook/WhatsApp is `assets/images/social.jpg` (1200 × 630).
+- `sitemap.xml` en `robots.txt` worden automatisch gemaakt. De bewerkpagina staat er niet in en heeft een *noindex*-label.
 
 ## Lokaal bekijken
 
