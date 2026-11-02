@@ -11,6 +11,14 @@
     });
   }
 
+  // Links naar de oude website (bv. degoudenschaar.info/#producten) naar de juiste sectie sturen.
+  var oud = { '#producten': '#aanbod', '#overons': '#over-ons', '#Fotos': '#aanbod', '#home': '#inhoud' };
+  if (oud[location.hash]) {
+    history.replaceState(null, '', oud[location.hash]);
+    var doel = document.querySelector(location.hash);
+    if (doel) doel.scrollIntoView();
+  }
+
   // Hoogte van de vaste menubalk, zodat menulinks niet onder de balk eindigen.
   var header = document.querySelector('.site-header');
   function setHeaderH() { if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px'); }

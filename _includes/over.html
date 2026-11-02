@@ -1,7 +1,7 @@
 {% assign o = site.data.over %}
 <section class="section" id="over-ons">
   <div class="wrap story">
-    <figure class="ph"><img src="{{ o.foto | relative_url }}" alt="{{ o.foto_bijschrift }}" loading="lazy" style="object-position:35% center" data-cms="over:foto" data-cms-img data-cms-value="{{ o.foto }}"><figcaption data-cms="over:foto_bijschrift">{{ o.foto_bijschrift }}</figcaption></figure>
+    <figure class="ph"><img src="{{ o.foto | relative_url }}" alt="{{ o.foto_bijschrift }}" loading="lazy" decoding="async" style="object-position:35% center" data-cms="over:foto" data-cms-img data-cms-value="{{ o.foto }}"><figcaption data-cms="over:foto_bijschrift">{{ o.foto_bijschrift }}</figcaption></figure>
     <div>
       <div class="kicker">Over ons</div>
       <blockquote data-cms="over:citaat">{{ o.citaat }}</blockquote>

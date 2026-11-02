@@ -1,7 +1,7 @@
 <section class="section gallery-section" aria-label="Foto's uit de winkel">
   <div class="wrap gallery" data-cms-list="fotos" data-cms-add="Nieuwe foto toevoegen">
     {% for f in site.data.fotos %}
-    <figure class="ph" data-cms-item><img src="{{ f.bestand | relative_url }}" alt="{{ f.bijschrift }}" loading="lazy" data-cms-field="bestand" data-cms-img data-cms-value="{{ f.bestand }}"><figcaption data-cms-field="bijschrift">{{ f.bijschrift }}</figcaption></figure>
+    <figure class="ph" data-cms-item><img src="{{ f.bestand | relative_url }}" alt="{{ f.bijschrift }}" loading="lazy" decoding="async" data-cms-field="bestand" data-cms-img data-cms-value="{{ f.bestand }}"><figcaption data-cms-field="bijschrift">{{ f.bijschrift }}</figcaption></figure>
     {% endfor %}
   </div>
 </section>
