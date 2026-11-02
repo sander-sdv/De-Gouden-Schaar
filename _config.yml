@@ -12,4 +12,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - tools
   - .gitattributes

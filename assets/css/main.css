@@ -108,13 +108,14 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 /* contact */
 .visit{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:stretch}
 .map{position:relative;min-height:380px;overflow:hidden;background:var(--map-bg);display:flex}
-.map .kaart{position:absolute;inset:0;z-index:0;background:var(--map-bg)}
-/* Rustige kaart: grijze OpenStreetMap-tegels, alleen de gouden pin valt op */
-.map .leaflet-tile-pane{filter:grayscale(1) contrast(.85) brightness(1.08)}
-.map .leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,.75)}
-.map .leaflet-bar a{color:var(--ink)}
-.map .card{z-index:500}
-.pin-goud{background:none;border:0}
+.map .kaart-wrap{position:absolute;inset:0;z-index:0}
+/* Rustige kaart: enkel straatlijnen, de gouden pin is het enige accent */
+.map svg.kaart{width:100%;height:100%;display:block}
+.map .k-straat{stroke:#e7e3da}
+.map .k-baan{stroke:#dcd6ca}
+.map .k-pin path{fill:var(--gold)}
+.map .k-halo{fill:#000;opacity:.12}
+.map .osm{position:absolute;top:8px;right:10px;font-size:10px;color:var(--muted);opacity:.7}
 .map .card{position:absolute;left:14px;right:14px;bottom:14px;background:var(--bg);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .map .card strong{font-size:15px;display:block}
 .map .card small{display:block;color:var(--muted);font-size:13px}
