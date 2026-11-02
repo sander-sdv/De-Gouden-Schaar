@@ -32,7 +32,7 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 
 /* header */
 .nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px;gap:16px;flex-wrap:wrap}
-.brand{font-family:var(--serif);font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand{font-family:var(--serif);font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px;color:var(--gold-title)}
 .brand .icon{color:var(--gold)}
 .nav nav{display:flex;gap:24px;flex-wrap:wrap;font-size:15px}
 .nav nav a{text-decoration:none;color:var(--ink);opacity:.8}
