@@ -26,9 +26,8 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
 
 /* mededeling */
-.notice{background:var(--ink);color:#e3c26f;font-size:13px;padding-block:9px}
-.notice .wrap{display:flex;gap:10px;align-items:center}
-.notice i{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.notice{background:var(--ink);color:#e3c26f;font-size:clamp(16px,2vw,19px);font-weight:600;letter-spacing:.01em;padding-block:16px;text-align:center}
+.notice .wrap{display:block}
 
 /* header: blijft bovenaan staan tijdens het scrollen */
 .site-header{position:sticky;top:0;z-index:20;background:var(--bg)}

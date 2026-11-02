@@ -12,5 +12,5 @@
   <div class="tape" aria-hidden="true">{% for i in (0..29) %}<span style="left:{{ i | times: 100 }}px">{{ i }}</span>{% endfor %}</div>
 </header>
 {% if w.mededeling.tonen %}
-<div class="notice"><div class="wrap"><i aria-hidden="true"></i>{{ w.mededeling.tekst }}</div></div>
+<div class="notice" role="status"><div class="wrap">{{ w.mededeling.tekst }}</div></div>
 {% endif %}
