@@ -6,6 +6,7 @@
       <div class="kaart-wrap" role="img" aria-label="Kaart met de ligging van {{ w.naam }}, {{ w.adres.straat }}">{% include kaart.svg %}<span class="osm">© OpenStreetMap</span></div>
       <a class="card js-maps" href="https://www.google.com/maps/search/?api=1&amp;query={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener"><span><strong data-cms="winkel:adres.straat">{{ w.adres.straat }}</strong><small><span data-cms="winkel:adres.postcode">{{ w.adres.postcode }}</span> <span data-cms="winkel:adres.gemeente">{{ w.adres.gemeente }}</span> (<span data-cms="winkel:adres.stad">{{ w.adres.stad }}</span>)</small></span><span class="go">Open in Kaarten ↗</span></a>
     </div>
+    <div class="btns route-mobile"><a class="btn js-route" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener">Route plannen</a></div>
     <div class="info">
       <div class="kicker">Bezoek ons</div>
       <h2>Openingsuren</h2>
@@ -18,7 +19,7 @@
         <div><small>Telefoon</small><p><a href="tel:{{ w.telefoon | remove: ' ' }}" data-cms="winkel:telefoon">{{ w.telefoon }}</a></p></div>
         <div><small>E-mail</small><p><a href="mailto:{{ w.email }}" data-cms="winkel:email">{{ w.email }}</a></p></div>
       </div>
-      <div class="btns"><a class="btn js-route" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener">Route plannen</a></div>
+      <div class="btns route-desktop"><a class="btn js-route" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ q | url_encode }}" data-query="{{ q }}" target="_blank" rel="noopener">Route plannen</a></div>
     </div>
   </div>
 </section>
