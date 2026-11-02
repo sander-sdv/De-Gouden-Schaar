@@ -179,9 +179,9 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
     border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(17,17,16,.08);max-height:calc(100dvh - var(--header-h,80px));overflow:auto}
   .js .site-header.open nav{display:flex}
   .js .nav nav a{display:flex;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);
-    font-family:var(--serif);font-size:26px;line-height:1.1;opacity:1}
+    font-family:var(--serif);font-size:26px;line-height:1.1}
   .js .nav nav a:last-child{border-bottom:0}
-  .js .nav nav a:hover{text-decoration:none;color:var(--gold-text)}
+  .js .nav nav a:hover{text-decoration:none}
   .contact a,.social a{display:inline-block;padding-block:10px;margin-block:-10px}
   .hero-grid{gap:28px}
   .stitch{max-width:300px;width:100%;margin-inline:auto}
