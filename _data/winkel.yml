@@ -26,3 +26,9 @@ sociaal:
     url: https://www.facebook.com/www.degoudenschaar.be
   - naam: Instagram
     url: https://www.instagram.com/de_gouden_schaar_/
+
+# Locatie op de kaart (OpenStreetMap)
+kaart:
+  lat: 51.036695
+  lon: 3.7411292
+

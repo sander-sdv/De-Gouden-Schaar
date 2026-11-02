@@ -9,13 +9,13 @@
   --gold-text:#96731f;   /* goud voor kleine tekst op wit (leesbaar contrast) */
   --gold-title:#b38a2e;  /* goud in de grote titel */
   --soft:#f4f1ea;
-  --map-bg:#f1efea; --map-block:#e5e1d9; --map-water:#d9d5cc; --map-street:#ffffff;
+  --map-bg:#f1efea;
   --serif:"Gloock", Georgia, "Times New Roman", serif;
   --sans:"Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color-scheme: light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h,112px) + 12px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -26,11 +26,11 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
 
 /* mededeling */
-.notice{background:var(--ink);color:#e3c26f;font-size:13px;padding-block:9px}
-.notice .wrap{display:flex;gap:10px;align-items:center}
-.notice i{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.notice{background:var(--ink);color:#e3c26f;font-size:clamp(16px,2vw,19px);font-weight:600;letter-spacing:.01em;padding-block:16px;text-align:center}
+.notice .wrap{display:block}
 
-/* header */
+/* header: blijft bovenaan staan tijdens het scrollen */
+.site-header{position:sticky;top:0;z-index:20;background:var(--bg)}
 .nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px;gap:16px;flex-wrap:wrap}
 .brand{font-family:var(--serif);font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px;color:var(--gold-title)}
 .brand .icon{color:var(--gold)}
@@ -107,17 +107,20 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
 
 /* contact */
 .visit{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:stretch}
-.map{position:relative;display:block;text-decoration:none;min-height:340px;overflow:hidden;background:var(--map-bg)}
-.map .streets{position:absolute;inset:0;width:100%;height:100%}
-.m-bg{fill:var(--map-bg)} .m-water{fill:var(--map-water)} .m-block{fill:var(--map-block)} .m-street{stroke:var(--map-street)}
-.m-pin{fill:var(--gold)} .m-pin-dot{fill:var(--bg)}
-.map .pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px}
-.map .pin em{font-style:normal;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;white-space:nowrap}
-.map .card{position:absolute;left:14px;right:14px;bottom:14px;background:var(--bg);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.map{position:relative;min-height:380px;overflow:hidden;background:var(--map-bg);display:flex}
+.map .kaart-wrap{position:absolute;inset:0;z-index:0}
+/* Rustige kaart: enkel straatlijnen, de gouden pin is het enige accent */
+.map svg.kaart{width:100%;height:100%;display:block}
+.map .k-straat{stroke:#e7e3da}
+.map .k-baan{stroke:#dcd6ca}
+.map .k-pin path{fill:var(--gold)}
+.map .k-halo{fill:#000;opacity:.12}
+.map .osm{position:absolute;top:8px;right:10px;font-size:10px;color:var(--muted);opacity:.7}
+.map .card{position:absolute;left:14px;right:14px;bottom:14px;background:var(--bg);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .map .card strong{font-size:15px;display:block}
 .map .card small{display:block;color:var(--muted);font-size:13px}
 .map .go{font-weight:600;font-size:14px;color:var(--gold-text);white-space:nowrap}
-.map:hover .go{text-decoration:underline}
+.map .card:hover .go{text-decoration:underline}
 .info h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.5vw,44px);margin:6px 0 20px}
 .hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
 .hours td{padding:9px 0;border-bottom:1px solid var(--line)}
@@ -149,6 +152,9 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
   .story .ph{aspect-ratio:4/3}
   .nav nav{gap:18px}
+  .nav{padding-block:14px;gap:8px}
+  .tape{height:22px;font-size:9px}
+  .tape span{display:none}
 }
 @media (max-width:420px){.contact{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

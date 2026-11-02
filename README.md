@@ -29,9 +29,13 @@ Voor het eigen domein (www.degoudenschaar.info): voeg het domein toe onder **Set
 
 ## Lokaal bekijken
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+Een wijziging eerst op je eigen computer bekijken, vóór ze live gaat:
 
-Open daarna http://localhost:4000.
+**Eenmalig installeren (Windows)**
+1. Installeer Ruby via [RubyInstaller](https://rubyinstaller.org/downloads/) (kies "Ruby+Devkit", laatste versie). Laat aan het einde `ridk install` lopen en kies optie 3.
+2. Open een nieuwe terminal in deze map en voer uit: `gem install bundler` en daarna `bundle install`.
+
+**Elke keer**
+1. Haal de branch van de wijziging op, bv. `git fetch` en `git checkout claude/project-thread-gn67dz`.
+2. Start de site: `bundle exec jekyll serve --baseurl ""`
+3. Open http://localhost:4000. Wijzig je iets, dan ververst de site vanzelf na opslaan.
